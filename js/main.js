@@ -19,6 +19,7 @@ var gGame = {
 function init() {
 	endTimer()
 	resatrtGame()
+	gGame.isOn = true
 	gBoard = buildBoard()
 	renderBoard(gBoard, '.table')
 	countShown()
@@ -106,9 +107,9 @@ function cellClicked(elCell, i, j) {
 		clickedCell.isShown = true
 		creatMines()
 		setMinesNegsCount(gBoard)
-		startTimer()
+		if (gIntervalID === 0) startTimer()
 		console.log('mines location ', gMines)
-		gGame.isOn = true
+
 		console.log(gBoard)
 	}
 	if (!gGame.isOn) return
@@ -132,7 +133,6 @@ function renderShownCell(location, value) {
 }
 //create the moines and push all the mines location to an array
 function creatMines() {
-	debugger
 	gMines = []
 	var lastI
 	var lastJ
@@ -178,6 +178,7 @@ function startTimer() {
 //stop the timer
 function endTimer() {
 	clearInterval(gIntervalID)
+	gIntervalID = 0
 }
 //make the timer format 00:00
 function pad(val) {
@@ -191,6 +192,7 @@ function pad(val) {
 //catch the right-click from the mouse and active the function
 function getMouseClickCode(i, j, event) {
 	var clickedCell = gBoard[i][j]
+	if (gIntervalID === 0) startTimer()
 	if (event.button === 2) {
 		// console.log('press')
 		markCell(clickedCell)
@@ -200,9 +202,8 @@ function getMouseClickCode(i, j, event) {
 }
 //add or remove a flag from a cell
 function markCell(clickedCell) {
-	if (!gGame.isOn) return
 	if (clickedCell.isShown) return
-
+	if (!gGame.isOn) return
 	if (!clickedCell.isMarked) {
 		clickedCell.isMarked = true
 		renderCell(clickedCell.location, '🚩')
@@ -268,6 +269,7 @@ function finishGame(val) {
 	elCenter.style.display = 'none'
 	var elModal = document.querySelector('.modal')
 	elModal.style.display = 'block'
+	gGame.isOn = false
 
 	if (val) {
 		gElBtn.innerText = '🤩'
@@ -294,6 +296,8 @@ function showNeghbors(clickedCell) {
 		for (var j = currCell.j - 1; j <= currCell.j + 1; j++) {
 			if (i === currCell.i && j === currCell.j) continue
 			if (j < 0 || j >= gBoard[0].length) continue
+			if (gBoard[i][j].isMarked) continue
+
 			gBoard[i][j].isShown = true
 			// console.log(gBoard[i][j])
 			var value =

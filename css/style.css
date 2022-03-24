@@ -4,7 +4,7 @@
 
 body {
 	text-align: center;
-	font-family: 'Gruppo', cursive;
+	font-family: 'Trebuchet MS', sans-serif;
 	margin: auto;
 	background-color: #c0bcbce0;
 	color: #232324e3;
@@ -12,26 +12,29 @@ body {
 h1 {
 	font-family: 'Trebuchet MS', sans-serif;
 	font-size: 3em;
-	letter-spacing: -2px;
+	letter-spacing: 30px;
 	text-transform: uppercase;
 }
 
 table {
 	margin: auto;
-	margin-top: 20px;
+	margin-top: 15px;
 }
 
 td {
-	border-radius: 10%;
-	border: 2px solid #4e4e50;
+	border-radius: 7%;
+	/* border: 2px solid #4e4e50; */
 	width: 40px;
 	height: 40px;
 	text-align: center;
 	font-size: 1.5em;
+	box-shadow: inset 0px 0px 2px 2px black;
+	text-shadow: 0px 0px 2px #1b1b1bd6;
 }
 
 td:hover {
-	border: 2px solid #dd4149c0;
+	background-color: rgba(230, 77, 77, 0.63);
+	
 }
 
 .selected {
@@ -46,16 +49,16 @@ td:hover {
 	display: block;
 	margin: auto;
 	cursor: pointer;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	border-radius: 10%;
 	padding: 5px;
-	background-color: #4e4e50;
+	/* background-color: #4e4e50; */
 }
 
 .timer {
 	display: block;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 /* CSS */
@@ -97,7 +100,7 @@ td:hover {
 }
 
 .level:hover {
-	box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+	box-shadow: #4e4e50 0 4px 8px,
 		rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
 	transform: translateY(-2px);
 }
@@ -119,17 +122,13 @@ td:hover {
 	background-color: rgba(202, 30, 30, 0.89);
 }
 
-.levelNow {
-	background-color: #1cad29b4;
-}
 
 .modal {
 	padding: 10px;
 	display: none;
 	margin: auto;
-	border: 5px solid rgba(209, 43, 43, 0.637);
-	width: 400px;
-	height: 50px;
+	border: 2px solid rgba(209, 43, 43, 0.637);
+	width: 375px;
 	box-shadow: -2px 0px 10px 0px rgba(236, 132, 132, 0.637);
 }
 
@@ -137,7 +136,10 @@ footer {
 	margin-top: 100px;
 }
 
-
 .life-count {
 	margin-top: 5px;
+}
+
+.mine {
+	color: rgba(230, 44, 44, 0.719); ;
 }
