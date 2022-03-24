@@ -1,0 +1,143 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	text-align: center;
+	font-family: 'Gruppo', cursive;
+	margin: auto;
+	background-color: #c0bcbce0;
+	color: #232324e3;
+}
+h1 {
+	font-family: 'Trebuchet MS', sans-serif;
+	font-size: 3em;
+	letter-spacing: -2px;
+	text-transform: uppercase;
+}
+
+table {
+	margin: auto;
+	margin-top: 20px;
+}
+
+td {
+	border-radius: 10%;
+	border: 2px solid #4e4e50;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+td:hover {
+	border: 2px solid #dd4149c0;
+}
+
+.selected {
+	background-color: #4e4e50c2;
+	box-shadow: inset 0px 0px 5px 2px black;
+}
+
+.marked {
+	background-color: red;
+}
+.restart {
+	display: block;
+	margin: auto;
+	cursor: pointer;
+	margin-bottom: 15px;
+	border-radius: 10%;
+	padding: 5px;
+	background-color: #4e4e50;
+}
+
+.timer {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* CSS */
+.level {
+	margin-left: 10px;
+	align-items: center;
+	appearance: none;
+	background-color: #4e4e50af;
+	border-radius: 4px;
+	border-width: 0;
+	box-shadow: #4e4e50 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px,
+		#d6d6e7 0 -3px 0 inset;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-flex;
+	font-family: 'JetBrains Mono', monospace;
+	height: 48px;
+	justify-content: center;
+	line-height: 1;
+	list-style: none;
+	overflow: hidden;
+	padding-left: 16px;
+	padding-right: 16px;
+	position: relative;
+	text-align: left;
+	text-decoration: none;
+	transition: box-shadow 0.15s, transform 0.15s;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	white-space: nowrap;
+	will-change: box-shadow, transform;
+	font-size: 18px;
+}
+
+.level:focus {
+	box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+		rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.level:hover {
+	box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+		rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+	transform: translateY(-2px);
+}
+
+.level:active {
+	box-shadow: #d6d6e7 0 3px 7px inset;
+	transform: translateY(2px);
+}
+
+.easy {
+	background-color: rgba(236, 132, 132, 0.637);
+}
+
+.hard {
+	background-color: rgba(230, 44, 44, 0.719);
+}
+
+.champion {
+	background-color: rgba(202, 30, 30, 0.89);
+}
+
+.levelNow {
+	background-color: #1cad29b4;
+}
+
+.modal {
+	padding: 10px;
+	display: none;
+	margin: auto;
+	border: 5px solid rgba(209, 43, 43, 0.637);
+	width: 400px;
+	height: 50px;
+	box-shadow: -2px 0px 10px 0px rgba(236, 132, 132, 0.637);
+}
+
+footer {
+	margin-top: 100px;
+}
+
+
+.life-count {
+	margin-top: 5px;
+}
